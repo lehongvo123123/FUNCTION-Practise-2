@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        var myArray=["l","k",45,456,"p"]
+
+        var changeFunction=function(){
+            var first =0;
+            var last=myArray.length-1;
+            for ( var i = 0 ; i<myArray.length ;i++){
+                if(first<last){
+                 var change= myArray[first];
+                     myArray[first]=myArray[last];
+                     myArray[last]=change;
+                     first++;
+                     last--;
+                }
+            }
+            document.write(myArray)
+        }
+        changeFunction();
+</script>
+</html>

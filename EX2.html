@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //
+     var areaSquare=function(){
+         for( var i = 0 ; i<10 ; i++ ){
+        var  widthNumber=parseInt(prompt("Fill in width square"));
+          var heightNumber=parseInt(prompt("Fill in height square"));
+         if( widthNumber>heightNumber){
+                  alert("wrong")
+         }else{
+             alert("right")
+            var result=widthNumber*heightNumber;
+                  alert("Arae is square : "+ result)
+                  break;
+         }
+     }
+     } 
+     areaSquare();
+     //
+     var perimeter=function(){
+         for( var i = 0 ; i<10 ; i++ ){
+        var  widthNumber1=parseFloat(prompt("Fill in r perimeter"));
+         
+         if( widthNumber1<0){
+                  alert("wrong")
+         }else{
+             alert("right")
+            var result=widthNumber1*Math.PI;
+                  alert("Arae is perimeter : "+ result)
+                  break;
+         }
+     }
+     } 
+     perimeter();
+</script>
+</html>

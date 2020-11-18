@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+      var compareNumber=function(){
+         var number1 = parseFloat(prompt("fill in number 1"));
+         var number2 = parseFloat(prompt("fill in number 2"));
+         var number3 = parseFloat(prompt("fill in number 3"));
+        
+         if( number1 >number2 && number1 > number3 ){
+              alert(number1+ "is max")
+         }else{
+            if( number2 >number1 && number2 > number3 ){
+              alert(number2+ "is max")
+            }else{
+                if( number3 >number1 && number3 > number1 ){
+              alert(number3+ " is max")
+            }
+         }
+         }
+      }
+      compareNumber();
+</script>
+</html>

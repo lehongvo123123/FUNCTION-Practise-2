@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var character=prompt("fill someThink character");
+    var myArray=["l","k",45,456,"p"];
+       var checkCharacter=function(){
+           test=true;
+            for ( var i  = 0 ; i<myArray.length ;i++ ){
+                   if(character==myArray[i]){
+                        test=true;
+                        break;
+                   }else{
+                       test=false;
+               }
+          }
+          if(test==true){
+              alert(true);
+          }else{
+              alert(false)
+          }
+       }
+       checkCharacter();
+</script>
+</html>

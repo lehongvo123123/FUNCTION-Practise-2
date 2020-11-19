@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .colorbackground{
+            background:red;
+        }
+        #countProject{
+            font-size: 40px;
+            color: red;
+            position: absolute;
+            left:1000px;
+            top:35px;
+
+        }
+        #changColor1{
+            width:600px;
+            height:50px;
+            font-size: 40px;
+        }
+        #changColor2{
+            width:90px;
+            height:50px;
+            font-size: 40px;
+            background:rgb(5, 173, 19);
+            color:white;
+        }
+        #changColor3{
+            width:160px;
+            height:50px;
+            font-size: 40px;
+            background:rgb(5, 155, 18);
+            color:white;
+        }
+        #nameProject{
+            width:600px;
+            height:60px;
+            font-size: 40px;
+
+        }
+        #addProject{
+            width:90px;
+            height:50px;
+            font-size: 40px;
+            background:rgb(5, 155, 18);
+        }
+        
+    </style>
+
+</head>
+<body>
+    <input type="text" id="nameProject">
+    <button id="addProject" onclick="pushProject()">Add</button>
+    <div id="result"></div>
+    <div id="countProject">/div>
+
+     <script>
+           let countAdd=0;
+           let countRemote=0;
+           let countProject=0;
+           let addNameProject=[];
+               function pushProject(){
+                   let value=document.getElementById("nameProject").value;
+                     addNameProject.push(value);
+                    document.getElementById("nameProject").value="";
+                    countAdd++;
+                    createTable();
+                    calculatorProject()
+               }
+            function createTable(){
+               
+                 let formTable=`<table border='1'>`;
+                    for (let index = 0; index < addNameProject.length; index++) {
+                    
+                         formTable+=`<tr>`;
+                            formTable+=`<td id="changColor1">${addNameProject[index]}</td>`;
+                                formTable+=`<td ><button onclick="editButton(${index})" id="changColor2">Edit</button></td>`;
+                                    formTable+=`<td><button onclick="editRemote(${index})" id="changColor3">Remote</button></td>`;    
+                         formTable+=`</tr>`;
+                    }
+                    formTable+=`</table>`;
+                  document.getElementById("result").innerHTML=formTable; 
+            }   
+            function editButton(i){
+                 let changeNameProject=prompt("Do you change someThing");
+                    addNameProject[i]=changeNameProject; 
+                    createTable();
+            }
+            function editRemote(i){
+                 addNameProject.splice(i,1);
+                 createTable();
+                 countRemote++;
+                 calculatorProject()
+            }
+            function calculatorProject(){
+                countProject=countAdd-countRemote;
+                document.getElementById("countProject").innerHTML=countProject+" Project"
+            }
+     </script>
+
+
+</body>
+</html>

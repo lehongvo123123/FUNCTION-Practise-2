@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"id="positionProductName">
+    <button  onclick="productName()">Add</button>
+    <div id="result">result</div>
+    <div id="countProject">count</div>
+      <script>
+            let array= [];
+            var count1=0;
+            var count2=0;
+            var count3=0;
+            function productName(){
+               
+                    let value = document.getElementById("positionProductName").value;
+                    array.push(value);
+                    count1++;
+                    document.getElementById("positionProductName").value="";
+                    tableBoard();
+                    checkNumberProject()
+            }
+            function tableBoard(){
+                  let formTable=`<table  border='1'>`;
+                    for (let index = 0; index < array.length; index++) {
+                             formTable+=`<tr>`;
+                             formTable+=`<td>${array[index]}</td>`;
+                             formTable+=`<td><button onclick="editButton(${index})">Edit</button></td>`;
+                             formTable+=`<td><button onclick="remoteButton(${index})">Remote</button></td>`
+                             formTable+=`</tr>`;
+                    }
+                    formTable+=`</table>`;
+                document.getElementById("result").innerHTML=formTable    
+            }
+          function editButton(i){
+                 var changeProject=prompt("What do you wnat change?");
+                   array[i]=changeProject;
+                   tableBoard();
+          }
+          function remoteButton(i){
+           
+              array.splice(i,1);
+              tableBoard();
+              count2--;
+              checkNumberProject()
+              
+          }
+          function checkNumberProject(){
+               count3 = count1+count2;
+               document.getElementById("countProject").innerHTML=count3+"project"
+          }
+
+      </script>
+</body>
+</html>

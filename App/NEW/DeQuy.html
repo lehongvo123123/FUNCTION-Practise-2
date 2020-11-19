@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+       let firstString=prompt("fill in first string");
+       let secondString=prompt("fill in second string");
+       let first=0;
+       let last=firstString.length-1;
+       function transitionFirstString(){
+          let test=true;
+            if( firstString.length!==secondString.length){
+                    test=false;
+            }else{
+                for (let index = 0; index < firstString.length; index++) {
+                        if( first<last){
+                               if(firstString[first]===secondString[last]){
+                                    test=true;
+                                    first++;
+                                    last--;
+                               }else{
+                                    test=false;
+                                    break;
+                               }
+                        }  
+                }
+            }
+             if( test ===true){
+                  alert(true)
+             }else{
+                  alert(false)
+             }
+       } 
+       
+       transitionFirstString()
+
+</script>
+</body>
+</html>
